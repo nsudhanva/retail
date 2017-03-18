@@ -1,0 +1,2 @@
+class ProductVendor < ApplicationRecord
+end
