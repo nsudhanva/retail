@@ -41,6 +41,14 @@
     <%= f.number_field :quantity %>
   </div>
 
+  <div class="field">
+    <label>Select Category: </label>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %> 
+    <%= b.check_box %> 
+    <%= b.label %> 
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
