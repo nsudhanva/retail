@@ -12,7 +12,7 @@ gem 'chartkick'
 gem 'httparty'
 gem 'sendgrid'
 gem "mini_magick"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem "nested_form"

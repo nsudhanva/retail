@@ -19,12 +19,15 @@
   </thead>
 
   <tbody>
+    <div class="row">
     <% @products.each do |product| %>
+    <% @product_image = product.image %>
+    <% @product_title = product.name %>
       <tr>
         <td><%= product.name %></td>
         <td><%= product.code %></td>
         <td><%= product.description %></td>
-        <td><%= product.image %></td>
+        <td><a class="modal-trigger waves-effect waves-light" href="#modal"><%= image_tag product.image, height: "80px", width: "auto" %></td></a>
         <td><%= product.cost %></td>
         <td><%= product.quantity %></td>
         <td><%= link_to 'Show', product %></td>
@@ -32,9 +35,26 @@
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    </div>
   </tbody>
 </table>
+
+<!-- Modal Structure -->
+  <div id="modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <%= image_tag @product_image, class: "responsive-img" %>
+    </div>
+    <div class="modal-footer">
+      <%= @product_title %>
+    </div>
+  </div>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+<script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
