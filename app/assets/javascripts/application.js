@@ -18,4 +18,5 @@
 
 $(document).ready(function(){
   $(".button-collapse").sideNav();
+  $('table').DataTable();
 });
