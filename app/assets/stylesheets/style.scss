@@ -1,0 +1,26 @@
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+  }
+}
+
+h1 {
+    font-size: 2.7rem;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+}
+
+/* Navbar */
+
+nav {
+    color: #fff;
+    background-color: #1A237E;
+}
+
+nav .brand-logo {
+    margin-left: 10px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+  margin-left: 20px;
+}
