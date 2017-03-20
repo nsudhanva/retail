@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+nav a.button-collapse {
+  display: block;
+}
+
+a.button-collapse i.material-icons {
+  margin-left: 0px;
+}
