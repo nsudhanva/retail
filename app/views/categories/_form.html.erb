@@ -18,10 +18,8 @@
 
   <div class="field">
     <label>Select Sub-Category: </label>
-    <%= f.collection_check_boxes :sub_category_ids, SubCategory.all, :id, :name do |b| %> 
-    <%= b.check_box %> 
-    <%= b.label %> 
-    <% end %>
+    <%= f.collection_select :sub_category_ids, SubCategory.all , :id, :name, {},
+         {:prompt => "Select Sub Category ", :multiple => true } %> <br><br>
   </div>
 
   <div class="actions">

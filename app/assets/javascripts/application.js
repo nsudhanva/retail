@@ -19,4 +19,6 @@
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('table').DataTable();
+  $("select").select2();
+  $("category-select").select2();
 });

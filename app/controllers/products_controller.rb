@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+
+    @sub_categories = []
+    
+    if params[:category]
+      @sub_categories = Package.find_by_supplier_id(params[:supplier].to_i)
+    end
   end
 
   # GET /products/1/edit

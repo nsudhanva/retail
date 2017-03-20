@@ -21,3 +21,15 @@ nav a.button-collapse {
 a.button-collapse i.material-icons {
   margin-left: 0px;
 }
+
+.select2-container--default .select2-selection--multiple {
+ 	width: 140px;
+}
+
+// .select2-container--default .select2-search--inline .select2-search__field {
+//   width: 100%;
+// }
+
+input.select2-search__field{
+	width: 100% !important;
+}

@@ -43,13 +43,12 @@
 
   <div class="field">
     <label>Select Category: </label>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %> 
-    <%= b.check_box %> 
-    <%= b.label %> 
-    <% end %>
+    <%= f.collection_select :category_ids, Category.all , :id, :name, {},
+         {:prompt => "Select Category ", :multiple => true } %> <br><br>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
