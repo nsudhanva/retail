@@ -1,0 +1,61 @@
+<% if alert %>
+  <div class="alert">
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel red">
+          <span class="white-text">         
+            <div id="error_explanation">
+               <p id="alert"><%= alert %></p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>
+
+<% if notice %>
+  <div class="alert">
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel green">
+          <span class="white-text">         
+            <div id="error_explanation">
+               <p id="notice"><%= notice %></p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>
+
+<h1>Taxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxes.each do |tax| %>
+      <tr>
+        <td><%= tax.name %></td>
+        <td><%= tax.amount %></td>
+        <td><%= link_to 'Show', tax %></td>
+        <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
+        <td><%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tax', new_tax_path %>
