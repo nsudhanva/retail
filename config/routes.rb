@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :employees
   resources :dashboards, only: [:index]
   resources :vendors
   resources :clients
