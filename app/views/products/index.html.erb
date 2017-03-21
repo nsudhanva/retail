@@ -32,6 +32,15 @@
 
 <h1>Products</h1>
 
+<div class="left">
+  <h5>Import Products</h5>
+
+  <%= form_tag import_products_path, multipart: true do %>
+    <%= file_field_tag :file %><br><br>
+    <%= submit_tag "Import" %><br>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -71,7 +80,9 @@
 <!-- Modal Structure -->
   <div id="modal" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <%= image_tag @product_image, class: "responsive-img" %>
+      <% unless @product_image.nil? %>
+        <%= image_tag @product_image, class: "responsive-img" %>
+      <% end %>
     </div>
     <div class="modal-footer">
       <%= @product_title %>

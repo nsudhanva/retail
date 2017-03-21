@@ -1,6 +1,20 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def import
+    filename = params[:file].path
+    # binding.pry
+
+    if File.extname(filename).to_s == ".csv" || File.extname(filename).to_s == ".xls" || File.extname(filename).to_s == ".xlsx"
+      CSV.foreach(filename, :headers => true) do |row|
+        Product.create!(row.to_hash)        
+      end
+      redirect_to products_path, notice: 'Product(s) were successfully added.' and return 
+    else 
+      redirect_to products_path, notice: 'Unknown file type #{filename}' and return 
+    end    
+  end
+
   # GET /products
   # GET /products.json
   def index
