@@ -5,13 +5,29 @@ one:
   code: MyString
   email: MyString
   phone: MyString
-  s_address: MyText
-  b_address: MyText
+  address: MyText
+  pan: MyString
+  account_no: MyString
+  opening_balance: 1.5
+  website: MyString
+  tax_reg_no: MyString
+  tax_reg_date: 2017-03-21
+  tds: false
+  entity: MyString
+  section: MyString
 
 two:
   name: MyString
   code: MyString
   email: MyString
   phone: MyString
-  s_address: MyText
-  b_address: MyText
+  address: MyText
+  pan: MyString
+  account_no: MyString
+  opening_balance: 1.5
+  website: MyString
+  tax_reg_no: MyString
+  tax_reg_date: 2017-03-21
+  tds: false
+  entity: MyString
+  section: MyString

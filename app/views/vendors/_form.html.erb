@@ -1,23 +1,13 @@
 <%= form_for(vendor) do |f| %>
-  <<% if vendor.errors.any? %>
-    <div class="alert">
-      <div class="row">
-        <div class="col s12">
-          <div class="card-panel red">
-            <span class="white-text">         
-              <div id="error_explanation">
-                <h6><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h6>
+  <% if vendor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
 
-                <ul>
-                <% vendor.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
+      <ul>
+      <% vendor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
@@ -42,13 +32,53 @@
   </div>
 
   <div class="field">
-    <%= f.label :s_address %>
-    <%= f.text_area :s_address %>
+    <%= f.label :address %>
+    <%= f.text_area :address %>
   </div>
 
   <div class="field">
-    <%= f.label :b_address %>
-    <%= f.text_area :b_address %>
+    <%= f.label :pan %>
+    <%= f.text_field :pan %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_no %>
+    <%= f.text_field :account_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :opening_balance %>
+    <%= f.text_field :opening_balance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tax_reg_no %>
+    <%= f.text_field :tax_reg_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tax_reg_date %>
+    <%= f.date_select :tax_reg_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tds %>
+    <%= f.check_box :tds %>
+  </div>
+
+  <div class="field">
+    <%= f.label :entity %>
+    <%= f.text_field :entity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :section %>
+    <%= f.text_field :section %>
   </div>
 
   <div class="actions">

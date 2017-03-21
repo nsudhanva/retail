@@ -17,7 +17,7 @@ class VendorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vendor" do
     assert_difference('Vendor.count') do
-      post vendors_url, params: { vendor: { b_address: @vendor.b_address, code: @vendor.code, email: @vendor.email, name: @vendor.name, phone: @vendor.phone, s_address: @vendor.s_address } }
+      post vendors_url, params: { vendor: { account_no: @vendor.account_no, address: @vendor.address, code: @vendor.code, email: @vendor.email, entity: @vendor.entity, name: @vendor.name, opening_balance: @vendor.opening_balance, pan: @vendor.pan, phone: @vendor.phone, section: @vendor.section, tax_reg_date: @vendor.tax_reg_date, tax_reg_no: @vendor.tax_reg_no, tds: @vendor.tds, website: @vendor.website } }
     end
 
     assert_redirected_to vendor_url(Vendor.last)
@@ -34,7 +34,7 @@ class VendorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vendor" do
-    patch vendor_url(@vendor), params: { vendor: { b_address: @vendor.b_address, code: @vendor.code, email: @vendor.email, name: @vendor.name, phone: @vendor.phone, s_address: @vendor.s_address } }
+    patch vendor_url(@vendor), params: { vendor: { account_no: @vendor.account_no, address: @vendor.address, code: @vendor.code, email: @vendor.email, entity: @vendor.entity, name: @vendor.name, opening_balance: @vendor.opening_balance, pan: @vendor.pan, phone: @vendor.phone, section: @vendor.section, tax_reg_date: @vendor.tax_reg_date, tax_reg_no: @vendor.tax_reg_no, tds: @vendor.tds, website: @vendor.website } }
     assert_redirected_to vendor_url(@vendor)
   end
 
