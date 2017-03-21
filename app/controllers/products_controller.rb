@@ -1,9 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def import
-    filename = params[:file].path
+  def import    
     # binding.pry
+    if params[:file].nil?
+      redirect_to products_path, notice: 'No file attached' and return 
+    end
+
+    filename = params[:file].path
 
     if File.extname(filename).to_s == ".csv" || File.extname(filename).to_s == ".xls" || File.extname(filename).to_s == ".xlsx"
       CSV.foreach(filename, :headers => true) do |row|
