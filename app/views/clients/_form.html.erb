@@ -1,29 +1,24 @@
 <%= form_for(client) do |f| %>
   <% if client.errors.any? %>
-    <div class="alert">
-      <div class="row">
-        <div class="col s12">
-          <div class="card-panel red">
-            <span class="white-text">         
-              <div id="error_explanation">
-                <h6><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h6>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
 
-                <ul>
-                <% client.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
@@ -49,6 +44,51 @@
   <div class="field">
     <%= f.label :b_address %>
     <%= f.text_area :b_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tax_reg_no %>
+    <%= f.text_field :tax_reg_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cst_reg_no %>
+    <%= f.text_field :cst_reg_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pan %>
+    <%= f.text_field :pan %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_method %>
+    <%= f.text_field :payment_method %>
+  </div>
+
+  <div class="field">
+    <%= f.label :opening_balance %>
+    <%= f.text_field :opening_balance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :opening_balance_date %>
+    <%= f.date_select :opening_balance_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attachment %>
+    <%= f.text_field :attachment %>
   </div>
 
   <div class="actions">

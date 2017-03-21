@@ -17,7 +17,7 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create client" do
     assert_difference('Client.count') do
-      post clients_url, params: { client: { b_address: @client.b_address, code: @client.code, email: @client.email, name: @client.name, phone: @client.phone, s_address: @client.s_address } }
+      post clients_url, params: { client: { attachment: @client.attachment, b_address: @client.b_address, code: @client.code, cst_reg_no: @client.cst_reg_no, email: @client.email, first_name: @client.first_name, last_name: @client.last_name, notes: @client.notes, opening_balance: @client.opening_balance, opening_balance_date: @client.opening_balance_date, pan: @client.pan, payment_method: @client.payment_method, phone: @client.phone, s_address: @client.s_address, tax_reg_no: @client.tax_reg_no, website: @client.website } }
     end
 
     assert_redirected_to client_url(Client.last)
@@ -34,7 +34,7 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update client" do
-    patch client_url(@client), params: { client: { b_address: @client.b_address, code: @client.code, email: @client.email, name: @client.name, phone: @client.phone, s_address: @client.s_address } }
+    patch client_url(@client), params: { client: { attachment: @client.attachment, b_address: @client.b_address, code: @client.code, cst_reg_no: @client.cst_reg_no, email: @client.email, first_name: @client.first_name, last_name: @client.last_name, notes: @client.notes, opening_balance: @client.opening_balance, opening_balance_date: @client.opening_balance_date, pan: @client.pan, payment_method: @client.payment_method, phone: @client.phone, s_address: @client.s_address, tax_reg_no: @client.tax_reg_no, website: @client.website } }
     assert_redirected_to client_url(@client)
   end
 

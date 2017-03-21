@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @client.name %>
+  <strong>First name:</strong>
+  <%= @client.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @client.last_name %>
 </p>
 
 <p>
@@ -28,6 +33,51 @@
 <p>
   <strong>B address:</strong>
   <%= @client.b_address %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @client.website %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @client.notes %>
+</p>
+
+<p>
+  <strong>Tax reg no:</strong>
+  <%= @client.tax_reg_no %>
+</p>
+
+<p>
+  <strong>Cst reg no:</strong>
+  <%= @client.cst_reg_no %>
+</p>
+
+<p>
+  <strong>Pan:</strong>
+  <%= @client.pan %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @client.payment_method %>
+</p>
+
+<p>
+  <strong>Opening balance:</strong>
+  <%= @client.opening_balance %>
+</p>
+
+<p>
+  <strong>Opening balance date:</strong>
+  <%= @client.opening_balance_date %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @client.attachment %>
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
