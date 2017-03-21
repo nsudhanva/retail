@@ -4,4 +4,6 @@ class Category < ApplicationRecord
 
 	has_many :category_sub_category
 	has_many :sub_categories, through: :category_sub_category
+
+	validates :name, presence: true
 end

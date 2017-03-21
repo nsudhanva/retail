@@ -7,7 +7,7 @@
           <div class="card-panel red">
             <span class="white-text">         
               <div id="error_explanation">
-                <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+                <h6><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h6>
 
                 <ul>
                 <% product.errors.full_messages.each do |message| %>

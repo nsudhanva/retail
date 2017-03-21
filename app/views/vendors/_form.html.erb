@@ -6,7 +6,7 @@
           <div class="card-panel red">
             <span class="white-text">         
               <div id="error_explanation">
-                <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+                <h6><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h6>
 
                 <ul>
                 <% vendor.errors.full_messages.each do |message| %>
