@@ -26,9 +26,10 @@ a.button-collapse i.material-icons {
  	width: 140px;
 }
 
-// .select2-container--default .select2-search--inline .select2-search__field {
-//   width: 100%;
-// }
+.table-container{
+	width: 100%;
+	overflow-x: scroll;
+}
 
 input.select2-search__field{
 	width: 100% !important;

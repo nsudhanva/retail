@@ -25,7 +25,15 @@ $(document).ready(function(){
   $("th").addClass("mdl-data-table__cell--non-numeric");
   $("td").addClass("mdl-data-table__cell--non-numeric");
   $("div#DataTables_Table_0_filter").attr("style","margin-bottom: 30px");
+  $("tr:odd").css("background-color", "#E8EAF6");
+  $( "table" ).wrap( "<div class='table-container'></div>" );
 });
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
 
 /* MDL DATA TABLES START */
 
