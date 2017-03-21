@@ -36,9 +36,14 @@
   <h5>Import Products</h5>
 
   <%= form_tag import_products_path, multipart: true do %>
-    <%= file_field_tag :file %><br><br>
+    <%= file_field_tag :file %>
     <%= submit_tag "Import" %><br>
   <% end %>
+</div>
+
+<div>
+  <%= link_to "Export to excel", products_path(format: "xls") %> |   
+  <%= link_to "Export to CSV", products_path(format: "csv") %> |
 </div>
 
 <table>
