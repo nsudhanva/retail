@@ -1,5 +1,34 @@
-<p id="notice"><%= notice %></p>
+<% if alert %>
+  <div class="alert">
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel red">
+          <span class="white-text">         
+            <div id="error_explanation">
+               <p id="alert"><%= alert %></p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>
 
+<% if notice %>
+  <div class="alert">
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel green">
+          <span class="white-text">         
+            <div id="error_explanation">
+               <p id="notice"><%= notice %></p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>
 <p>
   <strong>First name:</strong>
   <%= @employee.first_name %>
