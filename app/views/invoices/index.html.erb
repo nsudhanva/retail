@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Client</th>
+      <th>PDF</th>
       <th>Client email</th>
       <th>Billing address</th>
       <th>Invoice date</th>
@@ -26,6 +27,7 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= invoice.client_id %></td>
+        <td><%= link_to "Print Now", invoice_path(invoice.id, format: :pdf), target: :_blank %></td>
         <td><%= invoice.client_email %></td>
         <td><%= invoice.billing_address %></td>
         <td><%= invoice.invoice_date %></td>

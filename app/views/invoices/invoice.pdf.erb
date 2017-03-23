@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Invoice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style type="text/css">
+      body{
+        font-size: 12px;
+    }
+    ul,li{
+        list-style-type: none;
+        padding: 0;
+    }
+    .space{
+      width: 100px;
+      display: inline-block;
+
+    }
+</style>
+</head>
+<body style="margin:0; padding:0;font-family: Arial, Helvetica, sans-serif">
+  <table align="center"  border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="80%">
+    <tr>
+      <td>
+        <ul>       
+        <li style="margin-left: 10px;"><h2><%= "Hello #{@invoice.client.first_name}" %></h2></li>
+          <li style="margin-left: 10px;"><%= "Retail" %></li>
+          <li style="margin-left: 10px;"><%= "Vijayanagar" %></li>
+          <li style="margin-left: 10px;"><%= "Bangalore" %> <%= "India" %></li>
+        </ul>
+      </td>
+      <td>
+      
+      <%# if @master_control.company_logo_id.present? %>
+      
+       <%#= wicked_pdf_image_tag Refile.store.object(@master_control.company_logo_id).presigned_url(:get) , height: "75px", width: "75px" %>
+     
+      <%# end %>
+      <h1>INVOICE</h1>
+      </td>
+    </tr>
+      <tr>
+        <td>
+          <ul>
+            <li style="margin-left: 10px;"><h4>Bill To:</h4></li>
+            <li style="line-height: 2;margin-left: 10px;"><%= @invoice.client.first_name %></li>
+            <li style="line-height: 2;margin-left: 10px;"><%= @invoice.client.code %></li>
+            <li style="line-height: 2;margin-left: 10px;"><%= @invoice.client.email %>,<%= @invoice.client.phone %></li>
+            <li style="line-height: 2;margin-left: 10px;"><%= @invoice.client.b_address %></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li style="width:200px;line-height: 2;"><div class="space">Invoice</div><%= @invoice.id %></li>
+            <li style="line-height: 2;"><div class="space">Invoice Date</div><%= @invoice.invoice_date %></li>
+            <li style="line-height: 2;"><div class="space">Due Date</div><%= @invoice.due_date %></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-left: 10px; padding-bottom: 10px;">
+          Dear ,<%= @invoice.client.first_name %> <br>
+          <%= @invoice.message %>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-top: 1px solid;border-bottom: 1px solid;text-align: center;border-left: 1px solid;background: #3a3737;color: #fff;padding: 10px;font-size: 15px;font-weight: 600;">
+        Item Description</td>
+        <td style="border-top: 1px solid;border-bottom: 1px solid;border-right: 1px solid;width: 175px;text-align: center;background: #3a3737;color: #fff;padding: 10px;font-size: 15px;font-weight: 600;">Rate</td>
+      </tr>
+      <%# @invoice.services.each do |service|%>
+      <tr>
+        <td style="padding: 10px;line-height: 2;word-wrap: break-word;width: 850px;border-bottom: 1px solid #ccc;"><%= "Hello 18" %></div></td>
+        <td style="text-align: center;border-bottom: 1px solid #ccc;"><%= "Hello 22" %></td>
+
+      </tr>
+      <%# end %>
+     <!--  <tr>
+        <td style="padding-left: 10px;padding: 10px;line-height: 2;word-wrap: break-word;width: 850px; border-bottom: 1px solid #ccc;padding: 20px;">
+        </td>
+        <td style="text-align: center;border-bottom: 1px solid #ccc;"><%#= @invoice.amount %>
+          
+        </td>
+      </tr> -->
+      <tr>
+        
+        <td style="float: right;margin-right: 50px;line-height: 3;">Subtotal</td>
+        <td style="text-align: center;"><%= "Hello 21" %></td>
+      </tr>
+      <tr>
+        <td style="float: right;margin-right: 50px;line-height: 3;">Tax</td>
+        <td style="text-align: center;"> 
+          Services
+        </td>
+      </tr>
+      <tr>
+        <td style="float: right;margin-right: 50px;line-height: 3;">Total</td>
+        <td style="text-align: center;"> <%= "Hello 19" %></td>
+      </tr>
+    <tr>
+      <td style="padding-left: 10px"><h5>Description/Notes</h5></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-left: 10px;"> It was great doing business with you. <br><%= "Hello 20" %></td>
+    </tr>
+    <tr>
+      <td style="padding-top: 30px;padding-left: 10px;"><h5>Terms and Conditions</h5></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-left: 10px;"> Please make the payment by due date</td>
+    </tr>
+    </table>
+
+  </td>
+</tr>
+    
+  </table>
+</body>
+</html>
