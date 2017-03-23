@@ -12,6 +12,18 @@ class ClientsController < ApplicationController
   def show
   end
 
+  def get_client
+    if params[:invoice]
+      # binding.pry
+      @client = Client.find(params[:invoice])
+    end
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @client}
+    end 
+  end
+
   # GET /clients/new
   def new
     @client = Client.new

@@ -82,7 +82,22 @@
 <% end %>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-    
+  $(document).ready(function(){    
+    $("#invoice_client_id").change(function() {
+      var data = "invoice=" + $( "#invoice_client_id" ).val();
+      $.ajax({
+        url: "/clients/get_client",
+        data: data,
+        method: "get",
+        dataType: 'json',
+        statusCode: {
+          200: function(res){
+            // console.log(res.email);
+            $("#invoice_client_email").val(res.email);
+            $("#invoice_billing_address").val(res.b_address);
+          }
+        }
+      });
+    });
   });
 </script>
