@@ -7,6 +7,9 @@ class Product < ApplicationRecord
 	has_many :product_vendors
 	has_many :vendors, through: :product_vendors
 
+  has_many :invoice_products
+  has_many :invoices, through: :invoice_products
+
 	def self.to_csv(options = {}) 
     CSV.generate(options) do |csv| 
       csv << column_names 

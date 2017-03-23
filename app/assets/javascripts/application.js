@@ -27,6 +27,7 @@ $(document).ready(function(){
   $("div#DataTables_Table_0_filter").attr("style","margin-bottom: 30px");
   $("tr:odd").css("background-color", "#E8EAF6");
   $( "table" ).wrap( "<div class='table-container'></div>" );
+  $("span.select2").css("width", "+=15");
 });
 
 window.setTimeout(function() {

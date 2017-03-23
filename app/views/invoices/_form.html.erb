@@ -1,19 +1,29 @@
 <%= form_for(invoice) do |f| %>
   <% if invoice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+    <div class="alert">
+      <div class="row">
+        <div class="col s12">
+          <div class="card-panel red">
+            <span class="white-text">         
+              <div id="error_explanation">
+                <h6><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h6>
 
-      <ul>
-      <% invoice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% invoice.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
   <div class="field">
     <%= f.label :client_id %>
-    <%= f.number_field :client_id %>
+    <%= f.collection_select :client_id, Client.all, :id, :first_name, prompt: "Select Client" %>
   </div>
 
   <div class="field">
@@ -70,3 +80,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+  });
+</script>
