@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @invoice.client_id %>
+</p>
+
+<p>
+  <strong>Client email:</strong>
+  <%= @invoice.client_email %>
+</p>
+
+<p>
+  <strong>Billing address:</strong>
+  <%= @invoice.billing_address %>
+</p>
+
+<p>
+  <strong>Invoice date:</strong>
+  <%= @invoice.invoice_date %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @invoice.due_date %>
+</p>
+
+<p>
+  <strong>Tax type:</strong>
+  <%= @invoice.tax_type %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @invoice.message %>
+</p>
+
+<p>
+  <strong>Statement:</strong>
+  <%= @invoice.statement %>
+</p>
+
+<p>
+  <strong>Discount type:</strong>
+  <%= @invoice.discount_type %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @invoice.discount %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @invoice.attachment %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
