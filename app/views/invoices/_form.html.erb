@@ -1,4 +1,4 @@
-<%= form_for(invoice) do |f| %>
+<%= nested_form_for(invoice) do |f| %>
   <% if invoice.errors.any? %>
     <div class="alert">
       <div class="row">
@@ -31,9 +31,12 @@
     <%= f.text_field :client_email %>
   </div>
 
-  <div class="field">
-    
-  </div>
+  <%= f.fields_for :products do |product| %>
+      <label>Select Products: </label>
+      <%= product.collection_select :invoice_product_ids, Product.all , :id, :name, prompt: "Select Product" %> <br><br>
+      <%= product.link_to_remove "Remove this task" %>
+  <% end %>
+  <p><%= f.link_to_add "Add a product", :products %></p>
 
   <div class="field">
     <%= f.label :billing_address %>
