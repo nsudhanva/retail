@@ -32,10 +32,10 @@
         <td><%= invoice.billing_address %></td>
         <td><%= invoice.invoice_date %></td>
         <td><%= invoice.due_date %></td>
-        <td><%= invoice.tax_type %></td>
+        <td><%= invoice.tax.name %></td>
         <td><%= invoice.message %></td>
         <td><%= invoice.statement %></td>
-        <td><%= invoice.discount_type %></td>
+        <td><%= invoice.discount_type.name %></td>
         <td><%= invoice.discount %></td>
         <td><%= invoice.attachment %></td>
         <td><%= link_to 'Show', invoice %></td>

@@ -54,8 +54,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :tax_type %>
-    <%= f.text_field :tax_type %>
+    <%= f.label :tax_id %>
+    <%= f.collection_select :tax_id, Tax.all, :id, :name, prompt: "Select Tax Type" %>
   </div>
 
   <div class="field">
@@ -69,8 +69,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :discount_type %>
-    <%= f.text_field :discount_type %>
+    <%= f.label :discount_type_id %>
+    <%= f.collection_select :discount_type_id, DiscountType.all, :id, :name, prompt: "Select Discount Type" %>
   </div>
 
   <div class="field">
@@ -80,7 +80,7 @@
 
   <div class="field">
     <%= f.label :attachment %>
-    <%= f.text_field :attachment %>
+    <%= f.file_field :attachment %>
   </div>
 
   <div class="actions">

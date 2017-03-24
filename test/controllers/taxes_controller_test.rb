@@ -17,7 +17,7 @@ class TaxesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tax" do
     assert_difference('Tax.count') do
-      post taxes_url, params: { tax: { amount: @tax.amount, name: @tax.name } }
+      post taxes_url, params: { tax: { amount: @tax.amount, name: @tax.name, percentage: @tax.percentage } }
     end
 
     assert_redirected_to tax_url(Tax.last)
@@ -34,7 +34,7 @@ class TaxesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tax" do
-    patch tax_url(@tax), params: { tax: { amount: @tax.amount, name: @tax.name } }
+    patch tax_url(@tax), params: { tax: { amount: @tax.amount, name: @tax.name, percentage: @tax.percentage } }
     assert_redirected_to tax_url(@tax)
   end
 

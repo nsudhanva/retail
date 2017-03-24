@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324053527) do
+ActiveRecord::Schema.define(version: 20170324063429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,14 +85,14 @@ ActiveRecord::Schema.define(version: 20170324053527) do
     t.text     "billing_address"
     t.date     "invoice_date"
     t.date     "due_date"
-    t.string   "tax_type"
     t.text     "message"
     t.text     "statement"
-    t.string   "discount_type"
     t.float    "discount"
     t.string   "attachment"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "tax_id"
+    t.integer  "discount_type_id"
   end
 
   create_table "payment_types", force: :cascade do |t|
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 20170324053527) do
   create_table "taxes", force: :cascade do |t|
     t.string   "name"
     t.float    "amount"
+    t.float    "percentage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

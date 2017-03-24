@@ -69,6 +69,6 @@ class TaxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tax_params
-      params.require(:tax).permit(:name, :amount)
+      params.require(:tax).permit(:name, :amount, :percentage)
     end
 end

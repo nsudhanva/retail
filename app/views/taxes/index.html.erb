@@ -1,34 +1,4 @@
-<% if alert %>
-  <div class="alert">
-    <div class="row">
-      <div class="col s12">
-        <div class="card-panel red">
-          <span class="white-text">         
-            <div id="error_explanation">
-               <p id="alert"><%= alert %></p>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div> 
-<% end %>
-
-<% if notice %>
-  <div class="alert">
-    <div class="row">
-      <div class="col s12">
-        <div class="card-panel green">
-          <span class="white-text">         
-            <div id="error_explanation">
-               <p id="notice"><%= notice %></p>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div> 
-<% end %>
+<p id="notice"><%= notice %></p>
 
 <h1>Taxes</h1>
 
@@ -37,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Amount</th>
+      <th>Percentage</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Destroy</th>
@@ -48,6 +19,7 @@
       <tr>
         <td><%= tax.name %></td>
         <td><%= tax.amount %></td>
+        <td><%= tax.percentage %></td>
         <td><%= link_to 'Show', tax %></td>
         <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
         <td><%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>

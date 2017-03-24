@@ -3,7 +3,9 @@
 one:
   name: MyString
   amount: 1.5
+  percentage: 1.5
 
 two:
   name: MyString
   amount: 1.5
+  percentage: 1.5
