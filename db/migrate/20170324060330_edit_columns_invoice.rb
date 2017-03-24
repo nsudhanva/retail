@@ -4,5 +4,6 @@ class EditColumnsInvoice < ActiveRecord::Migration[5.0]
   	remove_column :invoices, :discount_type
   	add_column :invoices, :tax_id, :integer
   	add_column :invoices, :discount_type_id, :integer
+  	add_column :invoices, :amount, :float
   end
 end

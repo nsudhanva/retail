@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170324063429) do
   create_table "invoice_products", force: :cascade do |t|
     t.integer  "invoice_id"
     t.integer  "product_id"
+    t.integer  "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170324063429) do
     t.datetime "updated_at",       null: false
     t.integer  "tax_id"
     t.integer  "discount_type_id"
+    t.float    "amount"
   end
 
   create_table "payment_types", force: :cascade do |t|

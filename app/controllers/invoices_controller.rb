@@ -34,7 +34,7 @@ class InvoicesController < ApplicationController
   # POST /invoices.json
   def create
     @invoice = Invoice.new(invoice_params)
-
+    binding.pry
     respond_to do |format|
       if @invoice.save
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
@@ -78,6 +78,6 @@ class InvoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
-      params.require(:invoice).permit(:client_id, :client_email, :billing_address, :invoice_date, :due_date, :tax_id, :message, :statement, :discount_type_id, :discount, :attachment, product_ids: [], products_attributes: [:id, :name, :_destroy])
+      params.require(:invoice).permit(:client_id, :client_email, :billing_address, :invoice_date, :due_date, :tax_id, :message, :statement, :discount_type_id, :discount, :attachment, :amount ,product_ids: [])
     end
 end
