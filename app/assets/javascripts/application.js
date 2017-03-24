@@ -174,10 +174,10 @@ MaterialDataTable.prototype.init = function () {
 };
 // The component registers itself. It can assume componentHandler is available
 // in the global scope.
-componentHandler.register({
-    constructor: MaterialDataTable,
-    classAsString: 'MaterialDataTable',
-    cssClass: 'mdl-js-data-table'
-});
+// componentHandler.register({
+//     constructor: MaterialDataTable,
+//     classAsString: 'MaterialDataTable',
+//     cssClass: 'mdl-js-data-table'
+// });
 
 /* MDL DATA TABLES END*/

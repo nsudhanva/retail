@@ -57,13 +57,9 @@
         </tr>       
       </thead>
       <tbody>
-        <tr>
-          <td>Something</td>
-          <td><input type="text" style="text-align:center"></td>          
-        </tr>      
+
       </tbody>  
     </table>
-
   </div>
 
   <div class="field">
@@ -126,19 +122,38 @@
     }); 
 
     $("table").removeClass();
+    $("table").parent().removeClass();
     $("td").removeClass();
     $("th").removeClass();
 
     $("td").css("width", "auto");
     $("th").css("width", "auto");
 
+    var products = <%= @products.html_safe %>;
+
     $("#add").click(function(){
-      $("#nested-table tbody").append("<tr><td>Hello</td><td><input type=\"text\" style=\"text-align:center\"></td><td><i class=\"material-icons\" id=\"sub\" style=\"cursor: pointer;\">delete</i></td></tr>");
+      $("#nested-table tbody").append("<tr><td><select name=\"invoice[product_ids]\" id=\"invoice_product_ids\" tabindex=\"-1\"></td><td><input type=\"text\" style=\"text-align:center\"></td><td><i class=\"material-icons\" id=\"delete\" style=\"cursor: pointer;\">delete</i></td></tr>");
+
+      console.log(products);
+
+      $.each(products, function (i, item) {
+        $('#invoice_product_ids').append($('<option>', { 
+            value: i,
+            text : item.name 
+        }));
+      });
+
+      $("select").select2()
     });
 
-    $("#sub").click(function(){
-      
+    $(document).on('click','#delete',function(){
+      $("#nested-table tr:last").remove();
     });
-   
+
+    $("#mul").click(function(){
+      $("#nested-table tr:last").remove();
+    });   
+
   });
 </script>
+

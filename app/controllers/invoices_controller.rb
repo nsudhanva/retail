@@ -24,6 +24,8 @@ class InvoicesController < ApplicationController
   # GET /invoices/new
   def new
     @invoice = Invoice.new
+
+    @products = Product.all.to_json.gsub!(/\"/, '\'')
   end
 
   # GET /invoices/1/edit
