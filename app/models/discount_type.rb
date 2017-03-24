@@ -1,0 +1,2 @@
+class DiscountType < ApplicationRecord
+end

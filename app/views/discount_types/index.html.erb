@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Discount Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Percentage</th>
+      <th>Amount</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discount_types.each do |discount_type| %>
+      <tr>
+        <td><%= discount_type.name %></td>
+        <td><%= discount_type.percentage %></td>
+        <td><%= discount_type.amount %></td>
+        <td><%= link_to 'Show', discount_type %></td>
+        <td><%= link_to 'Edit', edit_discount_type_path(discount_type) %></td>
+        <td><%= link_to 'Destroy', discount_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Discount Type', new_discount_type_path %>

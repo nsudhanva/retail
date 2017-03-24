@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :discount_types
+  resources :payment_types
   get '/clients/get_client'
 
   resources :invoices

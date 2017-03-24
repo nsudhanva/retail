@@ -26,7 +26,7 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.client_id %></td>
+        <td><%= invoice.client.first_name %></td>
         <td><%= link_to "Print Now", invoice_path(invoice.id, format: :pdf), target: :_blank %></td>
         <td><%= invoice.client_email %></td>
         <td><%= invoice.billing_address %></td>
