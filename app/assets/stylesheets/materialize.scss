@@ -2524,19 +2524,6 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -2882,52 +2869,6 @@ footer.page-footer .footer-copyright {
   padding: 10px 0px;
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(51, 51, 51, 0.08);
-}
-
-table, th, td {
-  border: none;
-}
-
-table {
-  width: 100%;
-  display: table;
-}
-
-table.bordered > thead > tr,
-table.bordered > tbody > tr {
-  border-bottom: 1px solid #d0d0d0;
-}
-
-table.striped > tbody > tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
-
-table.striped > tbody > tr > td {
-  border-radius: 0;
-}
-
-table.highlight > tbody > tr {
-  transition: background-color .25s ease;
-}
-
-table.highlight > tbody > tr:hover {
-  background-color: #f2f2f2;
-}
-
-table.centered thead tr th, table.centered tbody tr td {
-  text-align: center;
-}
-
-thead {
-  border-bottom: 1px solid #d0d0d0;
-}
-
-td, th {
-  padding: 15px 5px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 2px;
 }
 
 @media only screen and (max-width: 992px) {

@@ -18,10 +18,10 @@
 
 $(document).ready(function(){
   $(".button-collapse").sideNav();
-  $('table').DataTable();
+  $("table:not(#nested-table)").DataTable();
   $("select").select2();
   $("category-select").select2();
-  $('table').addClass("mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--4dp");
+  $("table").addClass("mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--4dp");
   $("th").addClass("mdl-data-table__cell--non-numeric");
   $("td").addClass("mdl-data-table__cell--non-numeric");
   $("div#DataTables_Table_0_filter").attr("style","margin-bottom: 30px");

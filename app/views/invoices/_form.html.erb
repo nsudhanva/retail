@@ -47,6 +47,26 @@
   </div>
 
   <div class="field">
+    <label>Select Products: </label>
+    <table id="nested-table" border="1">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th><i class="material-icons" id="add" style="cursor: pointer;">add</i></th>
+        </tr>       
+      </thead>
+      <tbody>
+        <tr>
+          <td>Something</td>
+          <td><input type="text" style="text-align:center"></td>          
+        </tr>      
+      </tbody>  
+    </table>
+
+  </div>
+
+  <div class="field">
     <%= f.label :tax_id %>
     <%= f.collection_select :tax_id, Tax.all, :id, :name, prompt: "Select Tax Type" %>
   </div>
@@ -103,6 +123,22 @@
           }
         }
       });
+    }); 
+
+    $("table").removeClass();
+    $("td").removeClass();
+    $("th").removeClass();
+
+    $("td").css("width", "auto");
+    $("th").css("width", "auto");
+
+    $("#add").click(function(){
+      $("#nested-table tbody").append("<tr><td>Hello</td><td><input type=\"text\" style=\"text-align:center\"></td><td><i class=\"material-icons\" id=\"sub\" style=\"cursor: pointer;\">delete</i></td></tr>");
     });
+
+    $("#sub").click(function(){
+      
+    });
+   
   });
 </script>
