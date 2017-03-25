@@ -36,7 +36,27 @@ class InvoicesController < ApplicationController
   # POST /invoices.json
   def create
     @invoice = Invoice.new(invoice_params)
-    binding.pry
+    
+    if params[:products]
+      @products = JSON.parse(params[:products])
+      # binding.pry
+      @products.each do |key, value|
+        @invoice_product = InvoiceProduct.new
+        @invoice_product.product_id = key.to_i
+        # @invoice_product.invoice_id = @invoice.id
+
+        if Invoice.last.nil? 
+          @invoice_product.invoice_id = 1
+        else
+          @invoice_product.invoice_id = Invoice.last.id + 1
+        end
+
+        @invoice_product.quantity = value.to_i
+        @invoice_product.save
+      end
+      # binding.pry
+    end
+
     respond_to do |format|
       if @invoice.save
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
@@ -80,6 +100,6 @@ class InvoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
-      params.require(:invoice).permit(:client_id, :client_email, :billing_address, :invoice_date, :due_date, :tax_id, :message, :statement, :discount_type_id, :discount, :attachment, :amount ,product_ids: [])
+      params.require(:invoice).permit(:client_id, :client_email, :billing_address, :invoice_date, :due_date, :tax_id, :message, :statement, :discount_type_id, :discount, :attachment, :products, :amount ,product_ids: [])
     end
 end

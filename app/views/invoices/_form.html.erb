@@ -98,8 +98,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :id => "submit" %>
   </div>
+
 <% end %>
 
 <script type="text/javascript">
@@ -127,33 +128,47 @@
     $("th").removeClass();
 
     $("td").css("width", "auto");
-    $("th").css("width", "auto");
+    $("th").css("width", "auto");   
 
     var products = <%= @products.html_safe %>;
 
-    $("#add").click(function(){
-      $("#nested-table tbody").append("<tr><td><select name=\"invoice[product_ids]\" id=\"invoice_product_ids\" tabindex=\"-1\"></td><td><input type=\"text\" style=\"text-align:center\"></td><td><i class=\"material-icons\" id=\"delete\" style=\"cursor: pointer;\">delete</i></td></tr>");
+    var id = 1;
+    var select_ids = [];
+    var products_hash = {};
 
-      console.log(products);
+    $("#add").click(function(){         
+      $("#nested-table tbody").append("<tr><td><select id=\"invoice_product_ids" + "_" + id + "\"" + "tabindex=\"-1\"></td><td><input id=\"invoice_quantities" + "_" + id + "\" type=\"text\" style=\"text-align:center\"></td><td><i class=\"material-icons\" id=\"delete\" style=\"cursor: pointer;\">delete</i></td></tr>");      
 
       $.each(products, function (i, item) {
-        $('#invoice_product_ids').append($('<option>', { 
-            value: i,
-            text : item.name 
-        }));
+        $('#invoice_product_ids' + "_" + id).append($('<option>', { 
+            value: i + 1,
+            text : item.name            
+        }));        
       });
 
-      $("select").select2()
+      select_ids.push(id);
+
+      $("select").select2();
+
+      id++;
     });
+
+    $('#invoice_attachment').append("<input id=\"products\" type=\"hidden\" name=\"products\" value=\"\">");
 
     $(document).on('click','#delete',function(){
       $("#nested-table tr:last").remove();
     });
 
-    $("#mul").click(function(){
-      $("#nested-table tr:last").remove();
-    });   
+    $('#submit').on('click', function() {        
+      for (var i = 1; i <= select_ids.length; i++) {
+         products_hash[i] = $("#invoice_quantities" + "_" + i).val();
+      }   
 
+      $("#products").val(JSON.stringify(products_hash));
+      console.log(products_hash); 
+    });
+
+    
   });
 </script>
 
