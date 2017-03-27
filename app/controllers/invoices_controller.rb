@@ -36,29 +36,23 @@ class InvoicesController < ApplicationController
   # POST /invoices.json
   def create
     @invoice = Invoice.new(invoice_params)
-    
-    if params[:products]
-      @products = JSON.parse(params[:products])
-      # binding.pry
-      @products.each do |key, value|
-        @invoice_product = InvoiceProduct.new
-        @invoice_product.product_id = key.to_i
-        # @invoice_product.invoice_id = @invoice.id
-
-        if Invoice.last.nil? 
-          @invoice_product.invoice_id = 1
-        else
-          @invoice_product.invoice_id = Invoice.last.id + 1
-        end
-
-        @invoice_product.quantity = value.to_i
-        @invoice_product.save
-      end
-      # binding.pry
-    end
 
     respond_to do |format|
       if @invoice.save
+
+        if params[:products]
+          @products = JSON.parse(params[:products])
+          # binding.pry
+          @products.each do |key, value|
+            @invoice_product = InvoiceProduct.new
+            @invoice_product.product_id = key.to_i
+            @invoice_product.invoice_id = @invoice.id
+            @invoice_product.quantity = value.to_i
+            @invoice_product.save
+          end
+          # binding.pry
+        end
+
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
         format.json { render :show, status: :created, location: @invoice }
       else
