@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Receipt date:</strong>
+  <%= @receipt.receipt_date %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @receipt.message %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @receipt.payment_type_id %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @receipt.deposit_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @receipt.amount %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @receipt.attachment %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @receipt.invoice_id %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

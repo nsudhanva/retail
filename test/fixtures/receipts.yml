@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receipt_date: 2017-03-27
+  message: MyText
+  payment_type_id: 1
+  deposit_id: 1
+  amount: 1.5
+  attachment: MyString
+  invoice_id: 1
+
+two:
+  receipt_date: 2017-03-27
+  message: MyText
+  payment_type_id: 1
+  deposit_id: 1
+  amount: 1.5
+  attachment: MyString
+  invoice_id: 1

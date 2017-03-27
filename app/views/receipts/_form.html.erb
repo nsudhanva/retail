@@ -1,0 +1,52 @@
+<%= form_for(receipt) do |f| %>
+  <% if receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
+
+      <ul>
+      <% receipt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :invoice_id %>
+    <%= f.collection_select :invoice_id, Invoice.all, :id, :client_email, prompt: "Select Invoice" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :receipt_date %>
+    <%= f.date_select :receipt_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_type_id %>
+    <%= f.collection_select :payment_type_id, PaymentType.all, :id, :name, prompt: "Select Payment Type" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deposit_id %>
+    <%= f.collection_select :deposit_id, Deposit.all, :id, :name, prompt: "Select Deposit" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attachment %>
+    <%= f.text_field :attachment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

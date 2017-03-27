@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324063429) do
+ActiveRecord::Schema.define(version: 20170327045005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 20170324063429) do
     t.string   "attachment"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "deposits", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "discount_types", force: :cascade do |t|
@@ -126,6 +132,18 @@ ActiveRecord::Schema.define(version: 20170324063429) do
     t.integer  "quantity"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "receipts", force: :cascade do |t|
+    t.date     "receipt_date"
+    t.text     "message"
+    t.integer  "payment_type_id"
+    t.integer  "deposit_id"
+    t.float    "amount"
+    t.string   "attachment"
+    t.integer  "invoice_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "sub_categories", force: :cascade do |t|

@@ -3,6 +3,7 @@ class Invoice < ApplicationRecord
 
 	has_many :invoice_products
 	has_many :products, through: :invoice_products
+	has_many :receipts
 
 	belongs_to :client
 	belongs_to :tax
